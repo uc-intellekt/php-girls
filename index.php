@@ -58,6 +58,36 @@ $langs = [
     ],
     'frontend' => ['JavaScript'],
 ];
-print_r($langs);
+//print_r($langs);
 
-print $langs['frontend'][0];
+//print $langs['frontend'][0];
+
+//foreach ($langs as $key => $value) {
+////    var_dump($key);
+////    var_dump($value);
+////    die;
+//    print '<h2>'.$key.'</h2>';
+//    foreach ($value as $lang) {
+//        print '<div>'.$lang.'</div>';
+//    }
+//}
+//
+//for ($i = 0; $i < 10; $i += 2) {
+//    print $i;
+//    print $i;
+//}
+//
+//while (true) {
+//    echo 'Hello';
+//    break;
+//}
+//
+//do {
+//    echo 'Hi';
+//    break;
+//    // continue
+//} while(false);
+
+var_dump($_GET);
+var_dump($_POST);
+var_dump($_SERVER);
