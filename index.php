@@ -1,10 +1,12 @@
 <?php
 
-require_once __DIR__.'/src/GreetingHelper.php';
+require_once __DIR__ . '/src/Helper/GreetingHelper.php';
 
-$formalHelper = new GreetingHelper('Hello');
+use Helper\GreetingHelper as MyHelper;
+
+$formalHelper = new MyHelper('Hello');
 //var_dump($formalHelper);
 print $formalHelper->sayHello('Sergey');
 
-$friendlyHelper = new GreetingHelper('Hi');
+$friendlyHelper = new MyHelper('Hi');
 print $friendlyHelper->sayHello('Victor');

@@ -1,5 +1,7 @@
 <?php
 
+namespace Helper;
+
 /**
  * Created by PhpStorm.
  * User: Intellekt
