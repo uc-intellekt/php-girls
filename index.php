@@ -1,12 +1,16 @@
 <?php
 
-require_once __DIR__ . '/src/Helper/GreetingHelper.php';
+require __DIR__ . '/vendor/autoload.php';
 
-use Helper\GreetingHelper as MyHelper;
+$app = new Silex\Application();
 
-$formalHelper = new MyHelper('Hello');
-//var_dump($formalHelper);
-print $formalHelper->sayHello('Sergey');
+$app['debug'] = true;
 
-$friendlyHelper = new MyHelper('Hi');
-print $friendlyHelper->sayHello('Victor');
+$app->get('/', function () {
+    return 'Blog';
+});
+$app->get('/blog/{id}', function ($id) use ($app) {
+    return 'Post '.$app->escape($id);
+});
+
+$app->run();
