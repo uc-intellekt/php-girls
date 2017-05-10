@@ -20,9 +20,14 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         'port' => 3307,
     ),
 ));
+$app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 
 // Register routes
-$app->get('/', '\\Controller\\BlogController::indexAction');
-$app->get('/blog/{id}', '\\Controller\\BlogController::showPostAction');
+$app->get('/', '\\Controller\\BlogController::indexAction')
+    ->bind('homepage');
+$app->get('/blog/{id}', '\\Controller\\BlogController::showPostAction')
+    ->bind('show_blog');
+$app->get('/admin/blog/{id}/delete', '\\Controller\\AdminBlogController::deletePostAction')
+    ->bind('delete_blog');
 
 $app->run();

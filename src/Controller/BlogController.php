@@ -28,8 +28,10 @@ class BlogController
         /** @var Connection $conn */
         $conn = $app['db'];
 
-        $sql = "SELECT * FROM posts WHERE id = $id";
-        $post = $conn->fetchAssoc($sql);
+        $sql = "SELECT * FROM posts WHERE id = :post_id";
+        $post = $conn->fetchAssoc($sql, [
+            'post_id' => $id,
+        ]);
 
         return $twig->render('blog-post.twig', [
             'post' => $post,
